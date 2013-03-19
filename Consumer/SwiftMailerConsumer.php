@@ -28,7 +28,7 @@ class SwiftMailerConsumer implements ConsumerInterface
         require_once sprintf('%s/lib/classes/Swift.php', $vendorDir);
 
         if (!\Swift::$initialized) {
-            \Swift::registerAutoload(sprintf('%s/lib/swift_init.php', $vendorDir));
+            require sprintf('%s/lib/swift_required.php', $vendorDir);
         }
     }
 
